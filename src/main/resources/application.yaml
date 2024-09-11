@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: demo
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://my-auth-server.com
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/newidea
+    username: newidea
+    password: newidea
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
