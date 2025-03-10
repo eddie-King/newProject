@@ -1,21 +1,26 @@
 spring:
   application:
     name: demo
+---
+server:
+  port: ${PORT:8081}
+---
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: https://my-auth-server.com
-
+---
+spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/newidea
-    username: newidea
-    password: newidea
-
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/student
+    username: root
+    password: 1234
+---
+spring:
   jpa:
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
     hibernate:
       ddl-auto: update
+    show-sql: true
+    generate-ddl: true
